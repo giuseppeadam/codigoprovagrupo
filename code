@@ -1,0 +1,126 @@
+### Autores:
+# Alexandre Marques
+# Giusepe Stringhini Adam
+# Julian Ballesteros Ramos
+
+vetores = []
+vetor = []
+elemento = 0
+i = 0
+index = 1
+subIndex = 1
+
+while True:
+  print("Vetor numero ", index, ":")
+  while True:
+    print("Digite um valor para o ", subIndex, "elemento do vetor", index)
+    elemento = int(input())
+    vetor.append(elemento)
+    subIndex = subIndex + 1
+    print("adicionar outro elemento ?")
+    print("[1] - Não")
+    print("[Enter] - Sim")
+    status = input()
+    if status == "1":
+      vetores.append(vetor)
+      break
+
+  print(vetor)
+  print(vetores)
+  vetor = []
+  status = 0
+  subIndex = 1
+  index = index + 1
+  print("adicionar outro Vetor ?")
+  print("[1] - Não")
+  print("[Enter] - Sim")
+  status = input()
+
+  if status == "1":
+    break
+
+while True:
+  print("Quais operacoes deseja realizar ? ")
+  print("[0] - Intersecção ")
+  print("[1] - União ")
+  print("[2] -  Diferença")
+  print("[3] - produto Cartesiano")
+
+  operacao = int(input(":"))
+  if operacao == 0:
+    VetorResultante = []
+    print("quais conjuntos deseja trabalhar ?")
+    while i < len(vetores):
+      print("Vetor numero ", i, " :", vetores[i])
+      i = i + 1
+
+    v1 = int(input("primeiro Vetor: "))
+    v2 = int(input("segundo Vetor: "))
+
+    if len(vetores[v1]) > len(vetores[v2]):
+      maiorVetor = len([vetores][v1])
+    else:
+      maiorVetor = len(vetores[v2])
+
+    for i in range(maiorVetor):
+      for j in range(maiorVetor):
+        if vetores[v1][i] == vetores[v2][j]:
+          VetorResultante.append(vetores[v1][i])
+    print("Vetor resultante:")
+    print(VetorResultante)
+
+    print("Fim da operação")
+  elif operacao == 1:
+    VetorResultante = []
+    print("quais conjuntos deseja trabalhar ?")
+    while i < len(vetores):
+      print("Vetor numero ", i, " :", vetores[i])
+      i = i + 1
+
+    v1 = int(input("primeiro Vetor: "))
+    v2 = int(input("segundo Vetor: "))
+
+    VetorResultante = vetores[v1].append(vetores[v2])
+
+    print("Vetor resultante:")
+    print(VetorResultante)
+
+    print("Fim da operação")
+
+    print("1")
+  elif operacao == 2:
+
+    VetorResultante = []
+    VetorSuporte01 = []
+    VetorSuport02 = []
+    print("quais conjuntos deseja trabalhar ?")
+    while i < len(vetores):
+      print("Vetor numero ", i, " :", vetores[i])
+      i = i + 1
+
+    v1 = int(input("primeiro Vetor: "))
+    v2 = int(input("segundo Vetor: "))
+
+    if len(vetores[v1]) > len(vetores[v2]):
+      maiorVetor = len([vetores][v1])
+    else:
+      maiorVetor = len(vetores[v2])
+
+    for i in range(maiorVetor):
+      for j in range(maiorVetor):
+        if vetores[v1][i] == vetores[v2][j]:
+          VetorSuporte01.append(vetores[v1][i])
+
+    VetorSuporte02 = vetores[v1].append(vetores[v2])
+    VetorResultante = VetorSuporte01 - VetorSuporte02
+    print("Vetor resultante:")
+    print(VetorResultante)
+
+    print("Fim da operação")
+  elif operacao == 3:
+    print("4")
+
+    print("Erro, tente novamente")
+
+  else:
+    print("Erro, tente novamente")
